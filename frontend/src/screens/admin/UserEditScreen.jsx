@@ -21,15 +21,6 @@ const UserEditScreen = () => {
     error,
   } = useGetUserDetailsQuery(userId);
   const [updateUser, { isLoading: loadingUpdate }] = useUpdateUserMutation();
-
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (user) {
-      setName(user.name);
-      setEmail(user.email);
-      setIsAdmin(user.isAdmin);
-    }
-  }, [user]);
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
@@ -42,6 +33,15 @@ const UserEditScreen = () => {
     }
     console.log(user);
   };
+  useEffect(() => {
+    if (user) {
+      setName(user.name);
+      setEmail(user.email);
+      setIsAdmin(user.isAdmin);
+    }
+  }, [user]);
+  const navigate = useNavigate();
+
   return (
     <>
       <Link to="/admin/userlist" className="btn btn-light my-3">
@@ -59,26 +59,26 @@ const UserEditScreen = () => {
             <Form.Group controlId="name" className="my-2">
               <Form.Label>Name</Form.Label>
               <Form.Control
-                type="text"
+                type="name"
                 placeholder="Enter name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></Form.Control>
-            </Form.Group>{" "}
+            </Form.Group>
             <Form.Group controlId="email" className="my-2">
               <Form.Label>Email</Form.Label>
               <Form.Control
-                type="text"
-                placeholder="Enter image url"
+                type="email"
+                placeholder="Enter email"
                 value={email}
-                onChange={(e) => setEmail}
+                onChange={(e) => setEmail(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Form.Group controlId="isAdmin" className="my-2">
               <Form.Check
                 type="checkbox"
                 label="Is Admin"
-                value={isAdmin}
+                checked={isAdmin}
                 onChange={(e) => setIsAdmin(e.target.checked)}
               ></Form.Check>
             </Form.Group>{" "}
