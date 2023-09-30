@@ -9,6 +9,8 @@ function HomeScreen() {
 
   return (
     <>
+      <h1>Latest Products</h1>
+
       {isLoading ? (
         <Loader />
       ) : error ? (
@@ -24,7 +26,6 @@ function HomeScreen() {
           ))}
         </Row>
       )}
-      <h1>Latest Products</h1>
     </>
   );
 }
