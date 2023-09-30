@@ -28,7 +28,6 @@ function ProductScreen() {
     isLoading,
     error,
   } = useGetProductDetailsQuery(productId);
-  console.log(product);
   const addToCartHandler = () => {
     dispatch(addToCart({ ...product, qty }));
     navigate("/cart");
