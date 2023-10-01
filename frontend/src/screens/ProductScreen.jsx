@@ -46,7 +46,7 @@ function ProductScreen() {
     e.preventDefault();
     try {
       await createReview({
-        product,
+        productId,
         rating,
         comment,
       }).unwrap();
