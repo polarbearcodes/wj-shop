@@ -7,6 +7,7 @@ import { useLogoutMutation } from "../slices/usersApiSlice";
 import { logout } from "../slices/authSlice";
 import { LinkContainer } from "react-router-bootstrap";
 import logo from "../assets/shop.png";
+import { resetCart } from "../slices/cartSlice";
 import React from "react";
 
 function Header() {
@@ -19,9 +20,10 @@ function Header() {
     try {
       await logoutApiCall().unwrap();
       dispatch(logout());
+      dispatch(resetCart());
       navigate("/login");
-    } catch (error) {
-      console.log("error");
+    } catch (err) {
+      console.error(err);
     }
   };
   return (
