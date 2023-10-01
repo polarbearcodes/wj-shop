@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../slices/usersApiSlice";
 import { logout } from "../slices/authSlice";
 import { LinkContainer } from "react-router-bootstrap";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/shop.png";
 import React from "react";
 
 function Header() {
