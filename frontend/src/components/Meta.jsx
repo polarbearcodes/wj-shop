@@ -11,8 +11,8 @@ const Meta = ({ title, description, keywords }) => {
 };
 
 Meta.defaultProps = {
-  title: "Welcome to StuffedCompanions",
-  description: "This is a website for stuffed animals",
-  keywords: "stuffed animals, plushies, toys, stuffed toys",
+  title: "Welcome to WJ's Shop!",
+  description: "This is a ecommerce website built using MERN stack",
+  keywords: "gadgets, electronics, game consoles",
 };
 export default Meta;
