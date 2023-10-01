@@ -56,7 +56,7 @@ const OrderScreen = () => {
         await payOrder({
           orderId,
           details,
-        });
+        }).unwrap();
         refetch();
 
         toast.success("Payment successful");
